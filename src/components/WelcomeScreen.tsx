@@ -7,13 +7,9 @@ const WelcomeScreen = ({ onStartChat }: WelcomeScreenProps) => {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center max-w-2xl animate-fade-up">
         {/* Hero Title */}
-        <h1 className="font-playfair text-6xl md:text-8xl font-bold mb-8 leading-tight">
-          <span className="block text-transparent bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text">
-            Your Safe Space
-          </span>
-          <span className="block text-transparent bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text">
-            to Feel Better
-          </span>
+        <h1 className="font-playfair text-6xl md:text-8xl font-bold mb-8 leading-tight white-glow-text">
+          <span className="block">Your Safe Space</span>
+          <span className="block">to Feel Better</span>
         </h1>
         
         {/* Tagline */}
