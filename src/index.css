@@ -6,69 +6,70 @@
 
 @layer base {
   :root {
-    /* Core Wellness Colors */
-    --background: 207 100% 81%; /* Light blue base */
-    --foreground: 220 15% 25%; /* Dark blue-gray text */
+    /* Premium Dark Theme Colors */
+    --background: 240 15% 8%; /* Deep navy/black base */
+    --foreground: 240 20% 95%; /* Light text */
 
-    /* Glassmorphism Card System */
-    --glass: 220 60% 98%; /* Semi-transparent white */
-    --glass-border: 220 100% 95%; /* Light glass border */
-    --glass-glow: 207 100% 85%; /* Soft blue glow */
+    /* Glassmorphism Card System - Premium */
+    --glass: 240 20% 15%; /* Dark glass with warmth */
+    --glass-border: 280 30% 25%; /* Purple glass border */
+    --glass-glow: 280 50% 40%; /* Rich purple glow */
 
-    /* Wellness Brand Colors */
-    --primary: 15 100% 75%; /* Soft orange */
-    --primary-glow: 15 100% 80%; /* Lighter orange glow */
-    --primary-foreground: 0 0% 100%;
+    /* Premium Brand Colors */
+    --primary: 45 95% 65%; /* Elegant gold */
+    --primary-glow: 45 100% 75%; /* Brighter gold glow */
+    --primary-foreground: 240 15% 8%;
 
-    --secondary: 207 85% 75%; /* Calming blue */
-    --secondary-glow: 207 100% 85%; /* Blue glow */
-    --secondary-foreground: 220 15% 25%;
+    --secondary: 280 40% 45%; /* Deep purple */
+    --secondary-glow: 280 60% 60%; /* Purple glow */
+    --secondary-foreground: 240 20% 95%;
 
-    /* Accent & Supporting Colors */
-    --accent: 45 100% 80%; /* Warm yellow for highlights */
-    --accent-glow: 45 100% 85%;
-    --accent-foreground: 220 15% 25%;
+    /* Premium Accent Colors */
+    --accent: 320 40% 55%; /* Rich magenta */
+    --accent-glow: 320 60% 65%;
+    --accent-foreground: 240 20% 95%;
 
-    /* Chat Bubble Colors */
-    --teen-bubble: 15 100% 75%; /* Orange gradient for teen */
-    --teen-bubble-glow: 15 100% 80%;
-    --ai-bubble: 220 60% 98%; /* Glass blue for AI */
-    --ai-bubble-glow: 207 100% 85%;
+    /* Chat Bubble Colors - Premium */
+    --teen-bubble: 45 95% 65%; /* Gold gradient for teen */
+    --teen-bubble-glow: 45 100% 75%;
+    --ai-bubble: 240 20% 15%; /* Dark glass for AI */
+    --ai-bubble-glow: 280 50% 40%;
 
-    /* Semantic Colors */
-    --success: 142 76% 36%;
-    --success-glow: 142 76% 50%;
-    --warning: 38 92% 50%;
-    --warning-glow: 38 92% 65%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Semantic Colors - Premium */
+    --success: 142 60% 50%;
+    --success-glow: 142 70% 60%;
+    --warning: 38 85% 60%;
+    --warning-glow: 38 95% 70%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 240 20% 95%;
 
-    /* Surface Colors */
-    --card: 220 60% 98%;
-    --card-foreground: 220 15% 25%;
-    --popover: 220 60% 98%;
-    --popover-foreground: 220 15% 25%;
+    /* Surface Colors - Premium */
+    --card: 240 20% 12%;
+    --card-foreground: 240 20% 90%;
+    --popover: 240 20% 12%;
+    --popover-foreground: 240 20% 90%;
 
-    --muted: 220 40% 90%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 240 15% 20%;
+    --muted-foreground: 240 10% 60%;
 
-    --border: 220 100% 95%;
-    --input: 220 60% 98%;
-    --ring: 207 100% 75%;
+    --border: 280 20% 25%;
+    --input: 240 20% 15%;
+    --ring: 280 50% 50%;
 
     --radius: 1rem;
 
-    /* Custom Gradients */
-    --gradient-main: linear-gradient(135deg, hsl(207, 100%, 81%) 0%, hsl(15, 100%, 75%) 100%);
-    --gradient-teen-bubble: linear-gradient(135deg, hsl(15, 100%, 75%) 0%, hsl(25, 100%, 70%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsla(220, 60%, 98%, 0.7) 0%, hsla(207, 100%, 95%, 0.5) 100%);
-    --gradient-nav: linear-gradient(135deg, hsla(220, 60%, 98%, 0.8) 0%, hsla(207, 100%, 95%, 0.6) 100%);
+    /* Premium Gradients */
+    --gradient-main: linear-gradient(135deg, hsl(240, 15%, 8%) 0%, hsl(280, 20%, 15%) 50%, hsl(320, 25%, 20%) 100%);
+    --gradient-teen-bubble: linear-gradient(135deg, hsl(45, 95%, 65%) 0%, hsl(35, 90%, 60%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(240, 20%, 15%, 0.8) 0%, hsla(280, 30%, 20%, 0.6) 100%);
+    --gradient-nav: linear-gradient(135deg, hsla(240, 20%, 12%, 0.9) 0%, hsla(280, 30%, 18%, 0.8) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(280, 40%, 25%) 0%, hsl(320, 35%, 30%) 50%, hsl(45, 70%, 50%) 100%);
 
-    /* Glow Effects */
-    --glow-primary: 0 8px 32px hsla(15, 100%, 75%, 0.3);
-    --glow-secondary: 0 8px 32px hsla(207, 100%, 75%, 0.3);
-    --glow-glass: 0 8px 32px hsla(207, 100%, 85%, 0.2);
-    --glow-accent: 0 8px 32px hsla(45, 100%, 75%, 0.3);
+    /* Premium Glow Effects */
+    --glow-primary: 0 8px 32px hsla(45, 95%, 65%, 0.4), 0 0 60px hsla(45, 100%, 70%, 0.2);
+    --glow-secondary: 0 8px 32px hsla(280, 50%, 50%, 0.3), 0 0 80px hsla(280, 60%, 60%, 0.15);
+    --glow-glass: 0 8px 32px hsla(280, 40%, 40%, 0.25), inset 0 1px 0 hsla(280, 60%, 80%, 0.1);
+    --glow-accent: 0 8px 32px hsla(320, 50%, 55%, 0.3), 0 0 60px hsla(320, 60%, 65%, 0.2);
 
     /* Animation Durations */
     --duration-fast: 0.2s;
@@ -137,7 +138,8 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-[hsl(var(--background))] to-[hsl(var(--primary))] text-foreground;
+    @apply text-foreground;
+    background: var(--gradient-main);
     background-attachment: fixed;
   }
 }
@@ -214,12 +216,13 @@
     filter: drop-shadow(0 0 20px hsla(var(--primary), 0.5));
   }
 
-  /* Animated Background Elements */
+  /* Animated Background Elements - Premium */
   .floating-shape {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, hsla(var(--primary-glow), 0.1), transparent);
-    animation: float 6s ease-in-out infinite;
+    background: radial-gradient(circle, hsla(var(--primary), 0.15), hsla(var(--accent), 0.08), transparent);
+    animation: float 8s ease-in-out infinite;
+    filter: blur(1px);
   }
 
   .floating-shape:nth-child(2) { animation-delay: 1s; }
@@ -258,7 +261,11 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 20px hsla(var(--primary), 0.5);
+    text-shadow: 0 0 30px hsla(var(--primary), 0.8), 0 0 60px hsla(var(--primary), 0.4);
+    background: var(--gradient-premium);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
