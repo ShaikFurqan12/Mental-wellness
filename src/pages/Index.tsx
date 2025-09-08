@@ -1,13 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Layout from "@/components/Layout";
+import WelcomeScreen from "@/components/WelcomeScreen";
+import ChatScreen from "@/components/ChatScreen";
+import MoodJournalScreen from "@/components/MoodJournalScreen";
+import ResourcesScreen from "@/components/ResourcesScreen";
 
 const Index = () => {
+  const [currentPage, setCurrentPage] = useState("welcome");
+
+  const handleStartChat = () => {
+    setCurrentPage("chat");
+  };
+
+  const renderCurrentPage = () => {
+    switch (currentPage) {
+      case "welcome":
+        return <WelcomeScreen onStartChat={handleStartChat} />;
+      case "chat":
+        return <ChatScreen />;
+      case "journal":
+        return <MoodJournalScreen />;
+      case "resources":
+        return <ResourcesScreen />;
+      default:
+        return <WelcomeScreen onStartChat={handleStartChat} />;
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout currentPage={currentPage} onNavigate={setCurrentPage}>
+      {renderCurrentPage()}
+    </Layout>
   );
 };
 
