@@ -204,7 +204,7 @@
     background: linear-gradient(135deg, hsla(var(--accent), 0.1) 0%, hsla(var(--primary-glow), 0.1) 100%);
   }
 
-  /* Resource Cards */
+  /* Resource Cards - Fixed for build cache */
   .resource-card {
     @apply glass-card cursor-pointer;
   }
