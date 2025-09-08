@@ -206,7 +206,7 @@
 
   /* Resource Cards */
   .resource-card {
-    @apply glass-card cursor-pointer group;
+    @apply glass-card cursor-pointer;
   }
 
   .resource-card:hover .resource-icon {

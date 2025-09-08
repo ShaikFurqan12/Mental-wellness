@@ -86,7 +86,7 @@ const ResourcesScreen = () => {
           {exercises.map((exercise, index) => (
             <div
               key={index}
-              className="resource-card relative overflow-hidden"
+              className="resource-card group relative overflow-hidden"
             >
               <div className="resource-icon text-4xl mb-4 transition-transform duration-300">
                 <exercise.icon size={48} className="text-primary" />
