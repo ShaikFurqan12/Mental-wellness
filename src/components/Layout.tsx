@@ -1,4 +1,4 @@
-import { MessageCircle, BookOpen, Heart, User } from "lucide-react";
+import { MessageCircle, BookOpen, Heart, User, Users } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,13 +11,14 @@ const Layout = ({ children, currentPage, onNavigate }: LayoutProps) => {
     { id: 'chat', label: 'Chat' },
     { id: 'journal', label: 'Journal' },
     { id: 'resources', label: 'Resources' },
+    { id: 'community', label: 'Community' },
     { id: 'welcome', label: 'Support' },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 via-blue-50 to-orange-100">
       {/* Top Navigation Bar */}
-      <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50 rounded-b-2xl mx-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}

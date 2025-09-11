@@ -4,25 +4,27 @@ interface WelcomeScreenProps {
 
 const WelcomeScreen = ({ onStartChat }: WelcomeScreenProps) => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-purple-100 via-blue-50 to-orange-100">
-      <div className="bg-white rounded-3xl shadow-xl p-12 text-center max-w-4xl animate-fade-up">
-        {/* Hero Title */}
-        <h1 className="font-inter text-4xl md:text-5xl font-bold mb-6 leading-tight text-gray-900">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4">
+      {/* Hero Title and Tagline - Outside Card */}
+      <div className="text-center max-w-4xl mb-8">
+        <h1 className="font-inter text-3xl md:text-4xl font-bold mb-4 leading-tight text-gray-900">
           Let's make your mental wellness a{' '}
           <span className="text-green-500">reality.</span>
           <br />
           Right now.
         </h1>
         
-        {/* Tagline */}
-        <p className="font-inter text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+        <p className="font-inter text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
           Your AI companion for mental wellness. Chat, reflect, and grow with personalized support designed just for you.
           <br />
           No judgment. Just support.
         </p>
+      </div>
 
+      {/* Card with Input and Suggestions */}
+      <div className="bg-white rounded-3xl shadow-xl p-8 text-center max-w-2xl w-full animate-fade-up">
         {/* Input Field */}
-        <div className="bg-gray-50 rounded-2xl p-4 mb-6 max-w-2xl mx-auto">
+        <div className="bg-gray-50 rounded-2xl p-4 mb-6">
           <div className="flex items-center gap-4">
             <input
               type="text"
@@ -42,7 +44,7 @@ const WelcomeScreen = ({ onStartChat }: WelcomeScreenProps) => {
         </div>
 
         {/* Suggestion Pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-2">
           <button 
             onClick={onStartChat}
             className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full text-sm font-medium transition-all duration-200 border border-gray-200"

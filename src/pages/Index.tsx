@@ -4,6 +4,7 @@ import WelcomeScreen from "@/components/WelcomeScreen";
 import ChatScreen from "@/components/ChatScreen";
 import MoodJournalScreen from "@/components/MoodJournalScreen";
 import ResourcesScreen from "@/components/ResourcesScreen";
+import CommunityScreen from "@/components/CommunityScreen";
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState("welcome");
@@ -22,6 +23,8 @@ const Index = () => {
         return <MoodJournalScreen />;
       case "resources":
         return <ResourcesScreen />;
+      case "community":
+        return <CommunityScreen />;
       default:
         return <WelcomeScreen onStartChat={handleStartChat} />;
     }
