@@ -1,5 +1,4 @@
-import { MessageCircle, BookOpen, Heart, User, Mic } from "lucide-react";
-import { useState } from "react";
+import { MessageCircle, BookOpen, Heart, User } from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,49 +8,72 @@ interface LayoutProps {
 
 const Layout = ({ children, currentPage, onNavigate }: LayoutProps) => {
   const navItems = [
-    { id: 'welcome', icon: Heart, label: 'Home' },
-    { id: 'chat', icon: MessageCircle, label: 'Chat' },
-    { id: 'journal', icon: BookOpen, label: 'Journal' },
-    { id: 'resources', icon: User, label: 'Resources' },
+    { id: 'chat', label: 'Chat' },
+    { id: 'journal', label: 'Journal' },
+    { id: 'resources', label: 'Resources' },
+    { id: 'welcome', label: 'Support' },
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background Shapes */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="floating-shape w-32 h-32 top-10 left-10"></div>
-        <div className="floating-shape w-20 h-20 top-1/3 right-20"></div>
-        <div className="floating-shape w-24 h-24 bottom-20 left-1/4"></div>
-        <div className="floating-shape w-16 h-16 bottom-1/3 right-1/3"></div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-blue-50 to-orange-100">
+      {/* Top Navigation Bar */}
+      <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex items-center">
+              <div className="flex-shrink-0 flex items-center">
+                <Heart className="h-8 w-8 text-green-500" />
+                <span className="ml-2 text-xl font-bold text-gray-900">SafeSpace</span>
+              </div>
+            </div>
 
-      {/* Main Content */}
-      <main className="relative z-10 pb-20 md:pb-0">
-        {children}
-      </main>
+            {/* Navigation Links */}
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-8">
+                {navItems.map(({ id, label }) => (
+                  <button
+                    key={id}
+                    onClick={() => onNavigate(id)}
+                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                      currentPage === id
+                        ? 'text-gray-900 border-b-2 border-green-500'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-      {/* Floating Navigation */}
-      <nav className="floating-nav bottom-4 left-1/2 transform -translate-x-1/2 md:top-4 md:bottom-auto">
-        <div className="flex items-center space-x-6">
-          {navItems.map(({ id, icon: Icon, label }) => (
-            <button
-              key={id}
-              onClick={() => onNavigate(id)}
-              className={`relative p-3 rounded-full transition-all duration-300 group ${
-                currentPage === id 
-                  ? 'bg-primary text-white shadow-[0_0_20px_hsla(var(--primary),0.5)]' 
-                  : 'text-foreground hover:text-primary'
-              }`}
-              aria-label={label}
-            >
-              <Icon size={20} />
-              {currentPage === id && (
-                <div className="absolute inset-0 rounded-full animate-glow-pulse bg-primary/20"></div>
-              )}
-            </button>
-          ))}
+            {/* CTA Button */}
+            <div className="hidden md:block">
+              <button
+                onClick={() => onNavigate('chat')}
+                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200"
+              >
+                Start Chatting
+              </button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => onNavigate('chat')}
+                className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full transition-colors duration-200"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
         </div>
       </nav>
+
+      {/* Main Content */}
+      <main className="relative">
+        {children}
+      </main>
     </div>
   );
 };
