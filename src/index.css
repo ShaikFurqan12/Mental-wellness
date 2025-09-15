@@ -6,48 +6,49 @@
 
 @layer base {
   :root {
-    /* Premium Dark Theme Colors */
-    --background: 240 15% 8%; /* Deep navy/black base */
-    --foreground: 240 20% 95%; /* Light text */
+    /* Calming Light Theme Colors */
+    --background: 210 40% 96%; /* Soft light blue-white */
+    --foreground: 210 20% 15%; /* Dark blue-gray text */
 
-    /* Glassmorphism Card System - Premium */
-    --glass: 240 20% 15%; /* Dark glass with warmth */
-    --glass-border: 280 30% 25%; /* Purple glass border */
-    --glass-glow: 280 50% 40%; /* Rich purple glow */
+    /* Calming Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 60% 85%), hsl(160 50% 85%)); /* Soft blue to green */
+    --gradient-card: linear-gradient(145deg, hsl(210 40% 98%), hsl(210 30% 96%)); /* Subtle card gradient */
+    --gradient-footer: linear-gradient(90deg, hsl(210 60% 90%), hsl(160 50% 90%)); /* Footer gradient line */
 
-    /* Premium Brand Colors */
-    --primary: 45 95% 65%; /* Elegant gold */
-    --primary-glow: 45 100% 75%; /* Brighter gold glow */
-    --primary-foreground: 240 15% 8%;
+    /* Wellness Brand Colors */
+    --primary: 160 60% 45%; /* Calming green */
+    --primary-glow: 160 70% 55%; /* Brighter green glow */
+    --primary-foreground: 0 0% 100%; /* White text on green */
 
-    --secondary: 280 40% 45%; /* Deep purple */
-    --secondary-glow: 280 60% 60%; /* Purple glow */
-    --secondary-foreground: 240 20% 95%;
+    --secondary: 210 50% 85%; /* Soft blue */
+    --secondary-glow: 210 60% 90%; /* Light blue glow */
+    --secondary-foreground: 210 20% 15%; /* Dark text on light blue */
 
-    /* Premium Accent Colors */
-    --accent: 320 40% 55%; /* Rich magenta */
-    --accent-glow: 320 60% 65%;
-    --accent-foreground: 240 20% 95%;
+    /* Calming Accent Colors */
+    --accent: 45 90% 75%; /* Soft yellow-orange */
+    --accent-glow: 45 95% 85%;
+    --accent-foreground: 210 20% 15%;
 
-    /* Chat Bubble Colors - Premium */
-    --teen-bubble: 45 95% 65%; /* Gold gradient for teen */
-    --teen-bubble-glow: 45 100% 75%;
-    --ai-bubble: 240 20% 15%; /* Dark glass for AI */
-    --ai-bubble-glow: 280 50% 40%;
+    /* Chat & Semantic Colors */
+    --success: 160 50% 50%; /* Calming green */
+    --success-glow: 160 60% 60%;
+    --warning: 45 85% 65%; /* Soft orange */
+    --warning-glow: 45 95% 75%;
+    --destructive: 0 50% 60%; /* Soft red */
+    --destructive-foreground: 0 0% 100%;
 
-    /* Semantic Colors - Premium */
-    --success: 142 60% 50%;
-    --success-glow: 142 70% 60%;
-    --warning: 38 85% 60%;
-    --warning-glow: 38 95% 70%;
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 240 20% 95%;
+    /* Surface Colors */
+    --card: 210 40% 98%; /* Very light blue-white */
+    --card-foreground: 210 20% 15%;
+    --popover: 210 40% 98%;
+    --popover-foreground: 210 20% 15%;
 
-    /* Surface Colors - Premium */
-    --card: 240 20% 12%;
-    --card-foreground: 240 20% 90%;
-    --popover: 240 20% 12%;
-    --popover-foreground: 240 20% 90%;
+    /* Interactive Colors */
+    --muted: 210 30% 90%; /* Light gray-blue */
+    --muted-foreground: 210 15% 40%; /* Medium gray-blue */
+    --border: 210 30% 85%; /* Light border */
+    --input: 210 30% 95%; /* Very light input bg */
+    --ring: 160 60% 45%; /* Focus ring - primary green */
 
     --muted: 240 15% 20%;
     --muted-foreground: 240 10% 60%;
