@@ -1,4 +1,8 @@
 import { MessageCircle, BookOpen, Heart, User, Users } from "lucide-react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
+import AuthButtons from "./AuthButtons";
+import UserProfile from "./UserProfile";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,6 +11,25 @@ interface LayoutProps {
 }
 
 const Layout = ({ children, currentPage, onNavigate }: LayoutProps) => {
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user);
+    };
+
+    getUser();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   const navItems = [
     { id: 'chat', label: 'Chat' },
     { id: 'journal', label: 'Journal' },
@@ -48,24 +71,14 @@ const Layout = ({ children, currentPage, onNavigate }: LayoutProps) => {
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* Auth/User Section */}
             <div className="hidden md:block">
-              <button
-                onClick={() => onNavigate('chat')}
-                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200"
-              >
-                Start Chatting
-              </button>
+              {user ? <UserProfile /> : <AuthButtons />}
             </div>
 
-            {/* Mobile menu button */}
+            {/* Mobile Auth/User */}
             <div className="md:hidden">
-              <button
-                onClick={() => onNavigate('chat')}
-                className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full transition-colors duration-200"
-              >
-                <MessageCircle className="h-5 w-5" />
-              </button>
+              {user ? <UserProfile /> : <AuthButtons />}
             </div>
           </div>
         </div>
