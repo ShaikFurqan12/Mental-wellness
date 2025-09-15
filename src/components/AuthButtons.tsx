@@ -16,6 +16,18 @@ const AuthButtons = () => {
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check if Supabase is properly configured
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || import.meta.env.SUPABASE_URL;
+    if (!supabaseUrl || supabaseUrl.includes('your-project')) {
+      toast({
+        title: "Configuration Error",
+        description: "Please configure your Supabase project first. Check the console for details.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setLoading(true);
 
     try {
